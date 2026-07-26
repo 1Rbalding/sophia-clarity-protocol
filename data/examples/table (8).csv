@@ -1,0 +1,6 @@
+Layer,Change
+Brand / one-pager,“The Collective” → Sophia (or “Sophia Protocol”)
+Repo / docs,"Folder names, README, LAUNCH_RUNBOOK title"
+Tokens (optional),"e.g. HomeToken stay generic, or SophiaHome / governance naming"
+Contracts,Mostly no need to rename Solidity types for launch; brand can sit above the code
+Certificates,sNOTE / jNOTE can stay technical or become Sophia Senior/Junior later

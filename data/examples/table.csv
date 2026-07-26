@@ -1,0 +1,7 @@
+Area,Contracts / scripts,Approx. LOC
+Housing,"HomeToken, HomeWallet, Factory, MortgageController, Originator, InsurancePool, EquityAccess, ReverseMortgage","~2,800–3,500"
+Financial,"BridgeVehicle, CollectiveFund, TierVault, Arena, NoteCertificates, PriceOracle, CreditOracle","~2,500–3,200"
+Governance,"GovernanceController, ProtocolTimelock, UpgradeUnlock, MediatorRegistry, TermLimitedAccess","~1,500–2,000"
+Interfaces,I* files,~300–500
+Scripts,"DeployAll, WireTimelock, GrantRoles",~400–550
+Tests (sketched),"Payment routing, E2E, etc.","~600–1,000"
