@@ -1,6 +1,16 @@
 __pycache__/
 *.pyc
+*.pyo
 .env
+.env.*
 pilot/
+pilot_data/
 .DS_Store
+Thumbs.db
 node_modules/
+.vscode/
+.idea/
+*.log
+dist/
+build/
+*.egg-info/

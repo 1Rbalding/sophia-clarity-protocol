@@ -2,7 +2,7 @@
 
 **Project Name:** Sophia — Homeowner-Governed Residential Credit & Mutual Support System (with non-profit protection arm)  
 **Also referred to as:** Clarity Protocol (transparent, value-preserving digitization framework)  
-**Status:** Design complete; $1 initial funding committed; on-chain role scripts integrated; full code available; ready for launch phase  
+**Status:** Design complete; $1 initial funding committed; on-chain role scripts integrated; prototypes expanded; requirements & tokenomics defined. Ready for pilot/launch phase.  
 **Date:** July 26, 2026 (Presidential Packet dated July 24, 2026)
 
 ## The Solution (from the Presidential Packet)
@@ -49,51 +49,70 @@ Sophia provides the **Clarity** alternative:
 - Non-profit carve-out for the most vulnerable (foreclosure-to-protection).
 - Term-limited and recallable governance (including founder role) to prevent capture.
 
-## Current Phase
-- [x] Problem definition & market research (TIRXF/VCIG deep dives, side-by-side turnover/loss tables, split/warrant analysis, fee degradation patterns)
+## Current Phase & Progress (Active Tasks)
+
+- [x] Problem definition & market research
 - [x] Vision & solution definition (Presidential Packet + full design)
-- [x] Whitepaper v1.4 (Executive Summary, detailed on-chain from your code, founder recall governance)
-- [x] Architecture & governance spec (founder starts on governance coin, recallable by vote, retirement trigger)
-- [x] On-chain scripts integrated (GrantRoles.s.sol for term-limited roles)
-- [ ] Entity formation & legal structuring (pilot state compliance)
-- [ ] Capital raise mechanics & 10% non-profit enforcement
-- [ ] Full prototype / simulations (on-chain + off-chain)
+- [x] Whitepaper v1.4 (Executive Summary, detailed on-chain, founder recall)
+- [x] Architecture & governance spec
+- [x] On-chain scripts integrated (GrantRoles.s.sol)
+- [x] Requirements, high-level design, consensus & tokenomics (see specs/requirements_and_tokenomics.md)
+- [x] Core prototype + pilot simulation (sequential notes, rate buy-down, insurance, 10% enforcement, recall)
+- [x] Expanded ad-hoc testing (14 focused tests covering mechanics, edges, and integration)
+- [ ] GitHub setup, community files, and launch prep (in progress — see Task 8)
+
+See:
+- `specs/testing_plan.md` for current test coverage and security checklist
+- `launch/roadmap.md` for phased launch plan
+- `CONTRIBUTING.md` for how to help
+- [ ] Entity formation & legal structuring
+- [ ] Full code integration from source + testing
 - [ ] Pilot launch & first originations
 - [ ] Presentation to the President / lawful charter of recognition
 
-## Key Files & Integration
-- `docs/Sophia_Whitepaper.md` — Full v1.4 whitepaper
-- `docs/architecture.md` — Updated with founder governance rule
-- `specs/governance.md` — Dedicated spec: founder on governance coin, voted off by people, proactive retirement vote
-- `contracts/script/GrantRoles.s.sol` — Your on-chain role script (term-limited roles, PUBLIC_COMPUTER_ROLE for 2/3 unlocks)
-- `src/sophia_core.py` — Off-chain prototype stub
-- `data/examples/` — CSVs from your source (example data, e.g., for oracles)
-- `launch/` — Launch plan, checklist, integration scripts, GitHub setup
+## Key Files & Structure
+- `launch/roadmap.md` — Testing, security, and phased launch plan
+- `specs/testing_plan.md` — Detailed test areas and security considerations
+- `tests/test_pilot.py` — 14 ad-hoc tests (run with `python tests/test_pilot.py`)
+- `CONTRIBUTING.md` — How to contribute
+- `launch/github-setup.sh` — Helper script for initial GitHub repo creation
+- `.github/` — Issue/PR templates + CI workflow
 
-## Launch Support Needed
-You said you have the solution and need help launching it. The workspace is ready.
+## GitHub & Community
+- Repo will be made public after initial legal/entity prep.
+- Use GitHub Issues for tasks (templates provided).
+- All contributions must respect the 10% non-profit rule, one-home-one-vote, and founder recall mechanics.
+- Discussions and community building will be enabled once the repo is live.
+- `specs/requirements_and_tokenomics.md` — Explicit requirements, consensus (one-home-one-vote + timelocks), tokenomics (participation credits, rate buy-down, hard 10% non-profit lock)
+- `specs/governance.md` — Founder recall mechanics
+- `specs/sophia-core.md` — Core modules
+- `docs/Sophia_Whitepaper.md` — v1.4 full document
+- `docs/architecture.md` — Hybrid layers + on-chain roles
+- `src/sophia_core.py` — Base protocol (capital raise 10%, governance)
+- `src/governance_stub.py` — Founder recall implementation (RECALL PASSED demos)
+- `prototypes/pilot_simulation.py` — Expanded sim: sequential notes, dynamic rates (6%→3%), insurance claims, multi-raise, non-profit usage, reverse eligibility
+- `contracts/script/GrantRoles.s.sol` — Term-limited on-chain roles from your source
+- `launch/` — launch-plan.md, checklist, integration scripts, github-setup.sh
+- `data/examples/` — Your CSV data tables
 
-Immediate next actions we can take together:
-1. Finalize more of your code into /src, /contracts (tell me paths or paste key modules).
-2. Run the GrantRoles script simulation or full testnet setup.
-3. GitHub repo (private first): `./launch/github-setup.sh`
-4. Legal charter / operating agreements with 10% non-profit + founder recall language.
-5. Capital model and pilot roadmap.
-6. Technical prototype expansion (governance voting, recall mechanism).
-7. Materials for the requested Presidential meeting (deck, full design package, under-oath presentation).
+## Prototype Demo Highlights
+Run `python src/sophia_core.py` → capital raise + 10%, founder retirement vote (RECALL PASSED 3/5), metrics.
 
-**Supporting files now in workspace:**
-- `docs/Sophia_Presidential_Packet.txt` — full extracted letter + executive summary.
-- Market data in `/market-data/` (VCIG, TIRXF, etc.) as evidence of the problems Sophia solves.
-- Integrated on-chain script and example data from your D:\Sophia source.
+Run `python prototypes/pilot_simulation.py` → realistic 5-home pilot with rate relief, claims, non-profit allocations, recall.
 
-Reply with your priorities or next code pieces:
+## Next Immediate Actions
+1. Copy full code from D:/Sophia into the workspace (use launch/code-integration.sh after copying).
+2. Expand prototype further (full notes engine, timelock objects, oracle sim).
+3. Run `./launch/github-setup.sh` (private repo).
+4. Flesh out legal/charter language with 10% rule + founder recall.
+5. Build pilot capital model + deck for Presidential meeting.
+
+Reply with priorities:
 - More code to integrate?
-- Run/test the on-chain script?
-- GitHub init?
-- Legal/pilot docs?
-- Governance coin details (e.g., is it a token, or role-based)?
+- Run specific simulations or on-chain scripts?
+- GitHub / legal docs?
+- Governance coin details or tokenomics refinements?
 
-We can iterate quickly. This is the people’s document — let’s get it moving.
+**Governance note (per your direction):** Founder stays on the governance coin initially but is subject to vote by the people at any time. You will ask for a vote as you go into retirement. This is now documented and executable across specs, whitepaper, architecture, and running code.
 
-**Governance note (per your direction):** Founder stays on the governance coin initially but is subject to vote by the people at any time. You will ask for a vote as you go into retirement. This is now documented across whitepaper, architecture, and specs/governance.md and aligns with the term-limited role system in your code.
+Participation is the path. Let's keep building.
