@@ -8,7 +8,7 @@
 Sophia is a citizen-led, homeowner-governed system for sequential mortgages, mutual insurance, and rate relief. A separate non-profit arm receives 10% of capital raises to acquire foreclosed homes for restoration or safe housing. It is built on the principle of "one home, one vote" with strict safeguards against institutional capture. The system addresses the failures of traditional finance and recent asset pivots by prioritizing participation, transparency, and value preservation over extraction.
 
 ## 1. Introduction & Problem Statement
-- Failures in 2022-2026 digitization wave: pump-dump cycles, reverse splits, hidden fee degradation (gas/swap), stock-to-coin decoupling, 401k/retail losses (documented in VCIG ~$1.77B turnover, TIRXF extreme drawdowns, etc.).
+- Failures in 2022-2026 digitization wave: pump-dump cycles, reverse splits, hidden fee degradation (gas/swap), stock-to-coin decoupling, 401k/retail losses (documented in VCIG ~$1.77B turnover, etc.).
 - Traditional mortgage systems concentrate power, default to foreclosure, lack homeowner governance.
 - Need for a clean alternative: participation-based, protected, non-captured.
 
@@ -62,7 +62,7 @@ Sophia returns agency to homeowners and protects the vulnerable. Participation i
 
 ## Appendices
 - Full Presidential Packet (docs/Sophia_Presidential_Packet.txt)
-- Market analysis evidence (VCIG/TIRXF data)
+- Market analysis evidence (VCIG data)
 - Core spec (specs/sophia-core.md)
 - Architecture details
 

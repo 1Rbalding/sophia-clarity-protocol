@@ -1,10 +1,10 @@
 # Sophia: The Clarity Protocol  
 **A Homeowner-Governed System for Residential Credit, Mutual Support, and Foreclosure Protection**
 
-**Version:** 1.4  
-**Date:** July 26, 2026  
+**Version:** 1.0  
+**Date:** July 27, 2026  
 **Author:** [Founder, Sophia]  
-**Status:** Design complete; $1 initial funding committed; full technical specification and on-chain code implementation available (Foundry scripts for term-limited role management, timelocks, oracles, and upgrade controls). All core code resides in the repository.
+**Status:** Public release version. Full design, technical specification, and on-chain implementation complete. All core mechanics and scripts are documented in the repository.
 
 ---
 
@@ -54,7 +54,7 @@ On-chain components (implemented in Solidity via Foundry) enforce **term-limited
 - Lack of transparent mechanisms to protect the most vulnerable (homelessness, addiction/withdrawal recovery).
 
 ### 1.2 Patterns Observed in 2025–2026 Asset Pivots
-Analysis of microcap names pivoting from traditional businesses into tokenized/crypto narratives (e.g., VCIG, TIRXF, and comparables such as YYAI, ETHZ, NAKA) revealed recurring destructive mechanics:
+Analysis of microcap names pivoting from traditional businesses into tokenized/crypto narratives (e.g., VCIG and comparables such as YYAI, ETHZ, NAKA) revealed recurring destructive mechanics:
 
 - Repeated reverse splits (1:20, 1:30, 1:50, 1:60) used to compress float and reset optics.
 - Massive volume climaxes followed by sharp dumps (VCIG sampled ~$1.77B cumulative turnover 2025–2026; major windows alone exceeding $400–500M).
@@ -222,7 +222,7 @@ Sophia is structured as:
 **Phase 2 (Soft Launch)**
 - Execute pilot originations (target 5–10 homes).
 - Launch non-profit operations.
-- Public website and v1.0 whitepaper.
+- Public website and release of this whitepaper (v1.0).
 - Prepare materials for Presidential meeting / charter request.
 
 **Phase 3 (Scale)**
@@ -237,9 +237,9 @@ Sophia is structured as:
 
 Sophia returns agency to homeowners and provides a protected path for those the current system has discarded. It is built on participation, transparency, and locked protections rather than extraction or narrative pivots.
 
-The system was begun with $1 and a complete design (including on-chain role and timelock scripts). The only missing element is continued participation.
+The protocol was begun with a $1 seed and a complete, auditable design—including on-chain role and timelock scripts. The only missing element is continued participation from homeowners.
 
-The founder starts on the governance structure but remains fully subject to the people’s vote, with a commitment to trigger that vote upon retirement.
+The founder begins with governance participation but remains fully subject to the people’s vote at any time, with a commitment to proactively trigger that vote upon entering retirement.
 
 **One home. One vote. Paydown at your own pace.**  
 **$1 begun — A matching $1 invited — 10% of capital raises → foreclosure to protection.**

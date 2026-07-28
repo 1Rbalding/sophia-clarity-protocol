@@ -9,6 +9,7 @@
 - [x] Core requirements, tokenomics, governance spec
 - [x] Basic prototype + pilot simulation (notes, rates, insurance, 10%, recall, timelocks)
 - [x] Expanded testing plan (specs/testing_plan.md)
+- [x] GitHub prep: community files (CONTRIBUTING, CODE_OF_CONDUCT), issue/PR templates, CI workflow, updated setup script
 - [ ] Entity formation (LLC or equivalent in pilot state)
 - [ ] Full code integration from source (D:/Sophia)
 - [ ] Basic on-chain deployment tests (GrantRoles.s.sol on testnet)

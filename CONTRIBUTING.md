@@ -20,11 +20,14 @@ This is the **people’s protocol**. Contributions should align with the core pr
    - Follow existing code style (simple, readable Python in prototypes and src).
    - Add or update ad-hoc tests in `tests/test_pilot.py` when changing behavior.
    - Keep non-profit 10% guard and founder recall mechanics intact.
+   - When editing CI, templates, or docs, ensure changes support transparent, low-degradation governance.
 
 4. **Test**
    ```bash
    python tests/test_pilot.py
    ```
+
+   For CI changes, you can validate the workflow locally by checking YAML syntax or using `act` if available.
 
 5. **Submit a Pull Request**
    - Use the PR template.
@@ -33,6 +36,9 @@ This is the **people’s protocol**. Contributions should align with the core pr
 
 ## Code of Conduct
 Be respectful. This project prioritizes homeowner self-governance, protection of the vulnerable, and transparency. No institutional capture, no pump mechanics.
+
+## Running Verification (for edits)
+After certain code or script changes, an ad-hoc verification using a `hermes-verify-*.py` script in Temp is performed to confirm behavior (see past commits for examples). This is lightweight and focused on the changed files.
 
 ## Questions?
 Open an issue with the "question" label or discuss in the repo Discussions tab (once enabled).

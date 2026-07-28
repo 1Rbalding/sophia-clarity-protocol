@@ -1,7 +1,7 @@
 # Sophia Architecture (Clarity Protocol)
 
 ## Overview
-Sophia is a hybrid homeowner-governed protocol for residential credit and mutual support. It combines traditional mortgage mechanics with protocol-level rules for transparency, participation, and value preservation. Designed to avoid the extraction patterns observed in 2025-2026 microcap pivots (e.g., VCIG, TIRXF: pump-dumps via splits/warrants, hidden fee degradation, broken stock-to-coin correlation, 401k exposure).
+Sophia is a hybrid homeowner-governed protocol for residential credit and mutual support. It combines traditional mortgage mechanics with protocol-level rules for transparency, participation, and value preservation. Designed to avoid the extraction patterns observed in 2025-2026 microcap pivots (e.g., VCIG and similar microcap pivots: pump-dumps via splits/warrants, hidden fee degradation, broken stock-to-coin correlation, 401k exposure).
 
 **Core Principle:** One home, one vote. Participation, not capture. 10% of capital flows to non-profit protection.
 
