@@ -67,4 +67,6 @@
 
 This is the people's document. Keep building. Participation is the path.
 
-**Note (July 2026):** Initial GitHub issues have been seeded from this roadmap (see `.github/seed-issues/`). Run `./launch/seed-issues.sh` (requires `gh` CLI) after pushing the repository to GitHub.
+**Note (July 2026):** Initial GitHub issues have been seeded from this roadmap (see `.github/seed-issues/`). Run `./launch/seed-issues.sh` (requires `gh` CLI) after pushing.
+
+**Live repo:** https://github.com/1Rbalding/sophia-clarity-protocol

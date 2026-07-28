@@ -53,13 +53,13 @@ Sophia provides the **Clarity** alternative:
 
 - [x] Problem definition & market research
 - [x] Vision & solution definition (Presidential Packet + full design)
-- [x] Whitepaper v1.4 (Executive Summary, detailed on-chain, founder recall)
+- [x] Whitepaper v1.0 (final polish, TIRXF references removed, public release version)
 - [x] Architecture & governance spec
 - [x] On-chain scripts integrated (GrantRoles.s.sol)
 - [x] Requirements, high-level design, consensus & tokenomics (see specs/requirements_and_tokenomics.md)
 - [x] Core prototype + pilot simulation (sequential notes, rate buy-down, insurance, 10% enforcement, recall)
 - [x] Expanded ad-hoc testing (14 focused tests covering mechanics, edges, and integration)
-- [ ] GitHub setup, community files, and launch prep (in progress — see Task 8)
+- [x] GitHub setup complete (community files, CI, issue/PR templates, seed-issues script, remote configured)
 
 See:
 - `specs/testing_plan.md` for current test coverage and security checklist
@@ -79,10 +79,11 @@ See:
 - `.github/` — Issue/PR templates + CI workflow
 
 ## GitHub & Community
-- Repo will be made public after initial legal/entity prep.
+- **Repo:** https://github.com/1Rbalding/sophia-clarity-protocol
 - Use GitHub Issues for tasks (templates provided).
-- All contributions must respect the 10% non-profit rule, one-home-one-vote, and founder recall mechanics.
+- All contributions must respect the 10% non-profit rule, one home one vote, and founder recall mechanics.
 - Discussions and community building will be enabled once the repo is live.
+- To seed initial issues from the roadmap: `./launch/seed-issues.sh` (requires `gh` CLI)
 - `specs/requirements_and_tokenomics.md` — Explicit requirements, consensus (one-home-one-vote + timelocks), tokenomics (participation credits, rate buy-down, hard 10% non-profit lock)
 - `specs/governance.md` — Founder recall mechanics
 - `specs/sophia-core.md` — Core modules
