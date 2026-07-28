@@ -32,3 +32,5 @@ See contracts/script/GrantRoles.s.sol for role granting with terms.
 Founder initial assignment would use similar term-limited or recallable grant.
 
 This model directly prevents the capture and opacity issues from analyzed pivots.
+
+**Repository:** https://github.com/1Rbalding/sophia-clarity-protocol

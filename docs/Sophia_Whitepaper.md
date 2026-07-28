@@ -259,3 +259,8 @@ For the remembrance of a truth.
 ---
 
 *This is the people’s document. Once it is in motion, it is theirs to maintain.*
+
+---
+
+**Repository:** https://github.com/1Rbalding/sophia-clarity-protocol
+

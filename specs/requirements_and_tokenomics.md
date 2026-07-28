@@ -133,3 +133,5 @@ Participation is the path. Economics are designed around real shelter value pres
 - Legal entity docs must codify the 10% lock and founder recall rule.
 
 Participation is the path. This document + code = the foundation.
+
+**Repository:** https://github.com/1Rbalding/sophia-clarity-protocol
