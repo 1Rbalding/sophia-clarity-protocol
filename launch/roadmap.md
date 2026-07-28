@@ -1,7 +1,7 @@
 # Sophia Launch Roadmap & Testing/Security Plan
 
-**Version:** 0.1 (Draft)
-**Date:** July 26, 2026
+**Version:** 0.2 (Updated)
+**Date:** July 27, 2026
 
 ## High-Level Phases
 
@@ -9,9 +9,14 @@
 - [x] Core requirements, tokenomics, governance spec
 - [x] Basic prototype + pilot simulation (notes, rates, insurance, 10%, recall, timelocks)
 - [x] Expanded testing plan (specs/testing_plan.md)
-- [x] GitHub prep: community files (CONTRIBUTING, CODE_OF_CONDUCT), issue/PR templates, CI workflow, updated setup script
+- [x] GitHub repo live: https://github.com/1Rbalding/sophia-clarity-protocol
+  - Community files (CONTRIBUTING.md, CODE_OF_CONDUCT.md)
+  - Issue/PR templates + CI workflow
+  - seed-issues.sh and create-milestones.sh
+  - All commits pushed
 - [ ] Entity formation (LLC or equivalent in pilot state)
 - [ ] Full code integration from source (D:/Sophia)
+- [x] Charter Request drafted (`launch/charter-request.md`)
 - [ ] Basic on-chain deployment tests (GrantRoles.s.sol on testnet)
 
 ### Phase 2: Testing & Hardening (Aug 2026)
@@ -60,13 +65,19 @@
 - On-chain: Foundry tests for GrantRoles
 
 ## Key Deliverables
-- Whitepaper v1.5 (with this roadmap)
+- Whitepaper v1.0 (public release, TIRXF removed)
+- Milestones created on GitHub for all 4 phases
+- Charter Request document
 - Pilot checklist
 - Legal templates with exact rules
 - Public metrics page (simple)
 
 This is the people's document. Keep building. Participation is the path.
 
-**Note (July 2026):** Initial GitHub issues have been seeded from this roadmap (see `.github/seed-issues/`). Run `./launch/seed-issues.sh` (requires `gh` CLI) after pushing.
+**Note (July 27, 2026):** 
+- Repo live at https://github.com/1Rbalding/sophia-clarity-protocol
+- Milestones created (or run `launch/create-milestones.sh`)
+- Initial issues prepared in `.github/seed-issues/`
+- Run `./launch/seed-issues.sh` (requires `gh` CLI) to populate issues and assign to milestones
 
 **Live repo:** https://github.com/1Rbalding/sophia-clarity-protocol
