@@ -14,7 +14,7 @@
 - [ ] Draft operating agreements locking 10% rule
 - [ ] State licensing for mortgage/credit activities (pilot state)
 - [ ] Legal opinion on "one home, one vote" governance
-- [ ] Charter of recognition draft for submission
+- [x] Charter of recognition draft for submission (`launch/charter-request.md`)
 
 ## Phase 2: Pilot
 - [ ] Select pilot state(s)

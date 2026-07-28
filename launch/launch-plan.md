@@ -44,7 +44,7 @@ Sophia is a homeowner-governed residential credit and mutual-support system.
 - Execute pilot originations (start small, 5-10 homes).
 - Launch non-profit arm: begin acquiring distressed properties.
 - Public website + whitepaper v1.0.
-- Prepare materials for Presidential meeting / charter request.
+- Prepare and submit formal Charter Request (`launch/charter-request.md`) for Presidential meeting / recognition.
 - Track metrics: homes sheltered, participation rate, foreclosure avoidance.
 
 ## Phase 3: Scale & Recognition
@@ -53,7 +53,7 @@ Sophia is a homeowner-governed residential credit and mutual-support system.
 - On-chain elements (if applicable from code): token for governance or participation tracking.
 - Bug bounty / audits.
 - Expand non-profit to more restoration + sober living homes.
-- Pursue formal recognition / charter.
+- Submit Charter Request and pursue formal recognition / charter.
 
 ## Key Files to Integrate
 - User's full code base (please provide paths or paste key modules).

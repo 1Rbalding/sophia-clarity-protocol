@@ -68,7 +68,7 @@ See:
 - [ ] Entity formation & legal structuring
 - [ ] Full code integration from source + testing
 - [ ] Pilot launch & first originations
-- [ ] Presentation to the President / lawful charter of recognition
+- [x] Charter Request drafted (launch/charter-request.md) — ready for Presidential meeting / recognition
 
 ## Key Files & Structure
 - `launch/roadmap.md` — Testing, security, and phased launch plan
@@ -76,6 +76,7 @@ See:
 - `tests/test_pilot.py` — 14 ad-hoc tests (run with `python tests/test_pilot.py`)
 - `CONTRIBUTING.md` — How to contribute
 - `launch/github-setup.sh` — Helper script for initial GitHub repo creation
+- `launch/charter-request.md` — Formal request for lawful charter of recognition
 - `.github/` — Issue/PR templates + CI workflow
 
 ## GitHub & Community

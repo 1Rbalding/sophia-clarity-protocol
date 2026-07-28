@@ -39,7 +39,7 @@
 - Public dashboard (simple web view of metrics)
 
 ### Phase 4: Scale & Charter (2027+)
-- Request charter of recognition (Presidential Packet goal)
+- Request charter of recognition (see `launch/charter-request.md` and Presidential Packet)
 - Expand to more states with licensing
 - Full non-profit reporting
 - Optional on-chain tokenized notes/equity (with heavy safeguards)
