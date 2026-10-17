@@ -1,66 +1,100 @@
 import pandas as pd
-class SophiaLivingDoubleEngine:
+
+class SophiaSovereignLiquidityEngine:
     def __init__(self, property_value, base_market_rate=0.065, coop_points=13):
-        # 1. Programmatic 10% Capital Isolation Fence
         self.property_value = property_value
         self.isolated_non_profit_pool = property_value * 0.10
         self.homeowner_credit_principal = property_value * 0.90
         
-        # 2. Strict 70/30 Sequential Note Infrastructure
+        # Initialize 70/30 Note Splits
         self.first_note_balance = self.homeowner_credit_principal * 0.70
         self.second_note_balance = self.homeowner_credit_principal * 0.30
         
-        # 3. Co-Op Rate Buy-Down Logic (Optimized to 0% effective rate)
-        self.effective_annual_rate = max(0.0, base_market_rate - (coop_points * 0.005))
-        self.effective_monthly_rate = self.effective_annual_rate / 12.0
+        # Track Interest Environment
+        self.base_market_rate = base_market_rate
+        self.coop_points = coop_points
+        self.update_interest_rates()
         
-        # 4. Tracking Matrices
+        # State Ledger Primitives
         self.homeowner_equity = 0.0
         self.ledger_history = []
         self.month_counter = 0
 
-    def process_living_month(self, cash_payment, second_note_allocation_pct=0.0):
+    def update_interest_rates(self):
+        """Programmatically calculates the 401(k) Co-Op Rate Buy-Down."""
+        self.effective_annual_rate = max(0.0, self.base_market_rate - (self.coop_points * 0.005))
+        self.effective_monthly_rate = self.effective_annual_rate / 12.0
+
+    def pull_equity(self, withdraw_amount):
         """
-        Executes a payment cycle where the monthly payment stays completely flat,
-        but the internal routing to the 1:1 matching note can shift dynamically.
+        Allows the homeowner to pull liquid cash out of their equity stack from Day 1.
+        The withdrawn amount is re-applied to the Second Note balance.
         """
-        self.month_counter += 1
+        if withdraw_amount > self.homeowner_equity:
+            return f"Error: Requested ${withdraw_amount:,.2f} but only ${self.homeowner_equity:,.2f} is available."
         
-        if self.first_note_balance <= 0 and self.second_note_balance <= 0:
-            return False
+        # Execute immediate sovereign equity liquidity pull
+        self.homeowner_equity -= withdraw_amount
+        self.second_note_balance += withdraw_amount
+        
+        self.ledger_history.append({
+            "Month": f"{self.month_counter} (EQUITY PULL)",
+            "Flat_Payment": 0,
+            "Event": f"Pulled ${withdraw_amount:,.2f} Cash",
+            "First_Note_Bal": round(self.first_note_balance, 2),
+            "Second_Note_Bal": round(self.second_note_balance, 2),
+            "True_Equity": round(self.homeowner_equity, 2)
+        })
+        return f"Successfully pulled ${withdraw_amount:,.2f} from equity."
+
+    def execute_refinance(self, new_market_rate=None, new_coop_points=None):
+        """
+        Executes a zero-fee refinance instantly on-chain. Recalculates interest 
+        structures based on current parameters without administrative friction.
+        """
+        if new_market_rate is not None:
+            self.base_market_rate = new_market_rate
+        if new_coop_points is not None:
+            self.coop_points = new_coop_points
             
-        # Calculate systemic overheads
+        self.update_interest_rates()
+        
+        self.ledger_history.append({
+            "Month": f"{self.month_counter} (REFI RESET)",
+            "Flat_Payment": 0,
+            "Event": f"Refi Lock: {self.effective_annual_rate*100:.1f}% Rate",
+            "First_Note_Bal": round(self.first_note_balance, 2),
+            "Second_Note_Bal": round(self.second_note_balance, 2),
+            "True_Equity": round(self.homeowner_equity, 2)
+        })
+
+    def process_living_month(self, cash_payment, second_note_allocation_pct=0.0):
+        self.month_counter += 1
         outstanding_debt = self.first_note_balance + self.second_note_balance
         accrued_interest = outstanding_debt * self.effective_monthly_rate
         mutual_insurance_premium = outstanding_debt * 0.001 if outstanding_debt > 0 else 0
         
         net_principal_capital = max(0.0, cash_payment - (accrued_interest + mutual_insurance_premium))
         
-        # Calculate the dynamic internal shift split
         target_to_second = net_principal_capital * second_note_allocation_pct
         target_to_first = net_principal_capital - target_to_second
         
-        # ROUTING BLOCK 1: Process allocation targeted to the First Note (0% Base)
         if target_to_first > 0 and self.first_note_balance > 0:
             if target_to_first <= self.first_note_balance:
                 self.first_note_balance -= target_to_first
                 self.homeowner_equity += target_to_first
-                target_to_first = 0
             else:
                 target_to_first -= self.first_note_balance
                 self.homeowner_equity += self.first_note_balance
                 self.first_note_balance = 0
-                target_to_second += target_to_first  # Spillover flows automatically to Second Note
+                target_to_second += target_to_first
                 
-        # ROUTING BLOCK 2: Process allocation shifted to the Second Note (1:1 Matching Equity)
         if target_to_second > 0 and self.second_note_balance > 0:
-            # Apply the 1:1 Co-Op Match Multiplier
             effective_reduction = target_to_second * 2
             if effective_reduction <= self.second_note_balance:
                 self.second_note_balance -= effective_reduction
                 self.homeowner_equity += effective_reduction
             else:
-                # If Second Note is obliterated, spillover cleans out remaining First Note
                 excess = (effective_reduction - self.second_note_balance) / 2
                 self.homeowner_equity += self.second_note_balance
                 self.second_note_balance = 0
@@ -68,27 +102,31 @@ class SophiaLivingDoubleEngine:
                 self.homeowner_equity += excess
 
         self.ledger_history.append({
-            "Month": self.month_counter,
+            "Month": str(self.month_counter),
             "Flat_Payment": cash_payment,
-            "Shift_To_Second_%": f"{second_note_allocation_pct * 100}%",
+            "Event": f"Normal Routing ({int(second_note_allocation_pct*100)}% to 2nd)",
             "First_Note_Bal": round(self.first_note_balance, 2),
             "Second_Note_Bal": round(self.second_note_balance, 2),
             "True_Equity": round(self.homeowner_equity, 2)
         })
-        return True
 
-    def generate_report(self):
-        return pd.DataFrame(self.ledger_history)
+# ==========================================
+# RUNNING THE LIQUIDITY SIMULATION TEST
+# ==========================================
+sophia_engine = SophiaSovereignLiquidityEngine(property_value=350000, base_market_rate=0.065, coop_points=13)
 
-# Run a live test scenario over 6 months with a perfectly flat $1,500 monthly payment
-sophia_system = SophiaLivingDoubleEngine(property_value=350000, base_market_rate=0.065, coop_points=13)
+# Month 1 & 2: Building Initial Equity
+sophia_engine.process_living_month(cash_payment=2500, second_note_allocation_pct=0.0)
+sophia_engine.process_living_month(cash_payment=2500, second_note_allocation_pct=0.0)
 
-# Months 1-3: Conservative Stability Path (0% shifted to Second Note)
-for _ in range(3):
-    sophia_system.process_living_month(cash_payment=1500, second_note_allocation_pct=0.0)
+# Day 1 Action: Homeowner pulls $3,000 liquid equity out for a sudden emergency
+sophia_engine.pull_equity(withdraw_amount=3000)
 
-# Months 4-6: Homeowner chooses to dynamically shift 40% of their payment to accelerate the 1:1 match
-for _ in range(3):
-    sophia_system.process_living_month(cash_payment=1500, second_note_allocation_pct=0.40)
+# Month 3: Market rates jump, homeowner immediately executes a free Refi on the fly to protect terms
+sophia_engine.execute_refinance(new_market_rate=0.080, new_coop_points=16) # Added 3 more points to negate market jump
 
-print(sophia_system.generate_report().to_string(index=False))
+# Month 4: Resume normal tracking under new optimized refi matrix
+sophia_engine.process_living_month(cash_payment=2500, second_note_allocation_pct=0.20)
+
+print(pd.DataFrame(sophia_engine.ledger_history).to_string(index=False))
+
